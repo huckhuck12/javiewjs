@@ -12,6 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "cheerio": "^1.0.0-rc.10",
     "express": "^4.16.4",
     "node-telegram-bot-api": "^0.30.0"
   }
