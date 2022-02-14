@@ -43,17 +43,8 @@ bot.onText(/\/help/, msg => {
 );
 
 bot.onText(/\/all/, msg => {
-    request(javHost + tmdbapi, function(error, response, body){
-        if(!error && response.statusCode == 200){
-            const res = JSON.parse(body);
-            //部分电影没有 Poster
-            //const posterURL = 'http://image.tmdb.org/t/p/w185/' + res.poster_path;
-            bot.sendMessage(msg.chat.id, '*Title: *' + res.original_title + '\n*Date: *' + res.release_date + '\n*Language: *' + res.original_language + '\n*Overview: *' + res.overview, {parse_mode:'Markdown'})
-        }else{
-            bot.sendMessage(msg.chat.id, 'Seems to have some problems fetching the data :-(');
-        }
-    });
-);
+    bot.sendMessage(msg.chat.id, '[AVMOD](https://avmoo.sbs/tw) Telegram Bot!\n', {parse_mode: 'Markdown'});
+});
 
 bot.onText(/\/latest/, function(msg, match){
     request('https://api.themoviedb.org/3/movie/latest?language=en-US&api_key=' + tmdbapi, function(error, response, body){
